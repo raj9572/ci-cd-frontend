@@ -2,7 +2,8 @@ name: Frontend CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main   # Runs only on pushes to main branch
 
 jobs:
   build-and-deploy:
@@ -17,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22' # since you are using Node 22.17.0
+          node-version: '22'   # your version
 
       # Step 3: Install dependencies
       - name: Install dependencies
